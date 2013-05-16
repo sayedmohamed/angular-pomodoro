@@ -1,0 +1,60 @@
+<div ng-controller="MainCtrl">
+    <div class="row-fluid">
+        <div class="primary_controls">
+            <button class="btn btn-danger" id="stop" ng-click="stop()">
+                Stop
+            </button>
+            <div class="btn-group">
+                <button class="btn {{pomodorobtn}}" ng-click="pomodoro()">
+                    Pomodoro
+                </button>
+                <button class="btn {{shortbreakbtn}}" ng-click="shortbreak()">
+                    Short Break
+                </button>
+                <button class="btn {{longbreakbtn}}" ng-click="longbreak()">
+                    Long Break
+                </button>
+            </div>
+        </div>
+        <div class="countdown">
+            <p>
+                {{counter| date:'mm'}}:{{counter | date:'ss'}}
+            </p>
+        </div>
+        <div id="logs">
+            <div class="span4 offset4">
+                <ul>
+                    <div ng-repeat=" alert in alerts | limitTo:3 ">
+                        <div class="alert alert-success ">
+                            <strong>
+                                {{alert}}
+                            </strong>
+                            has ended
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        </div>
+                    </div>
+                </ul>
+                <strong>
+                    POMODORO HISTORY
+                </strong>
+                <ul>
+                    <div class="log " ng-repeat="log in logs | limitTo:9 ">
+                        <div id="logname" class="span6">
+                            <strong>
+                                {{log.name}}
+                            </strong>
+                        </div>
+                        <div id="logtime" class="span6 offset 6">
+                            {{log.time | fromNow}}
+                        </div>
+                    </div>
+                    <br>
+                </ul>
+            </div>
+        </div>
+        <div id="music">
+          <button id="startmsuic" class="btn" ng-click="startmusic()">Start music</button>
+          <button id="closemusic" class="btn" ng-click="closemusic()">Stop music</button>
+        </div>        
+    </div>
+</div>
