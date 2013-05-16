@@ -10,11 +10,11 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="styles/main.css"/>
-        <script src="http://code.angularjs.org/1.1.1/angular.js"></script>
-        <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
+        <script src="components/angular/angular.js"></script>
+        <script src="components/underscore/underscore.js"></script>
+        <script src="components/jquery/jquery.js"></script>
+        <script src="components/bootstrap/js/bootstrap.js"></script>
+        <script src="components/moment/moment.js"></script>
         <script src="//connect.soundcloud.com/sdk.js"></script>
     </head>
     <body ng-app="angularPomodoroApp">
@@ -28,10 +28,8 @@
             <script src="scripts/vendor/json3.min.js"></script>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
         <div ng-view></div>
 
-        <script src="scripts/vendor/angular.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
@@ -45,6 +43,7 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script> 
+
         <script>
         SC.initialize({
           client_id: '0c106a401c601bdc1ab1c5248d0be160'
