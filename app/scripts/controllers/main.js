@@ -1,7 +1,6 @@
 'use strict';
 
-
-angularPomodoroApp.controller('MainCtrl', function MainCtrl($scope, $timeout) {
+angular.module('app').controller('MainCtrl', function MainCtrl($scope, $timeout) {
 
   $scope.logs = [];
   $scope.alerts = [];
@@ -53,9 +52,9 @@ angularPomodoroApp.controller('MainCtrl', function MainCtrl($scope, $timeout) {
         var notification = window.webkitNotifications.createNotification('http://cdn2.iconfinder.com/data/icons/lullacons/large-alert.png', $scope.logs[0].name, $scope.logs[0].name + " has ended");
 
         notification.addEventListener('display', function() {
-            window.setTimeout(function() {
-                    notification.cancel();
-                }, 5000);
+          window.setTimeout(function() {
+            notification.cancel();
+          }, 5000);
         });
         notification.show();
       }
@@ -124,17 +123,6 @@ angularPomodoroApp.controller('MainCtrl', function MainCtrl($scope, $timeout) {
 
   }
 
-  $scope.startmusic = function() {
-    SC.stream('/tracks/293', function(sound){   
-              $scope.sound = sound;
-              $scope.sound.start();      
-    });
-  }
-
-  $scope.closemusic = function() {
-    $scope.sound.stop();
-  }
-
 });
 
 angular.module('filters', []).filter('fromNow', function () {
@@ -142,5 +130,3 @@ angular.module('filters', []).filter('fromNow', function () {
     return moment(date).fromNow();
   };
 });
-
-
